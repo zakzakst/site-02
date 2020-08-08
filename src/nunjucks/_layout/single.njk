@@ -22,12 +22,14 @@
 
   <!-- ヘッダー -->
   {% include '../_module/common/header.njk' %}
-  {% include '../_module/hero.njk' %}
 
-  <div class="container" data-barba="container" data-barba-namespace="{{ pageData.barbaName }}">
-    <!-- メインコンテンツ -->
-    {% block main_content %}
-    {% endblock %}
+  <div data-barba="container" data-barba-namespace="{{ pageData.barbaName }}">
+    {% include '../_module/hero.njk' %}
+    <div class="container">
+      <!-- メインコンテンツ -->
+      {% block main_content %}
+      {% endblock %}
+    </div>
   </div>
 
   <!-- フッター -->

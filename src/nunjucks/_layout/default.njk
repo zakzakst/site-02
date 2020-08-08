@@ -22,19 +22,21 @@
 
   <!-- ヘッダー -->
   {% include '../_module/common/header.njk' %}
-  {% include '../_module/hero.njk' %}
 
-  <div class="container" data-barba="container" data-barba-namespace="{{ pageData.barbaName }}">
-    <div class="columns columns--default">
-      <div class="column is-three-quarter-desktop">
-        <!-- メインコンテンツ -->
-        {% block main_content %}
-        {% endblock %}
-      </div>
-      <div class="column is-one-quarter-desktop">
-        <!-- サイドバー -->
-        {%- import '../_module/common/sidebar.njk' as sidebar -%}
-        {{ sidebar.sidebar(pageData.category) }}
+  <div data-barba="container" data-barba-namespace="{{ pageData.barbaName }}">
+    {% include '../_module/hero.njk' %}
+    <div class="container">
+      <div class="columns columns--default">
+        <div class="column is-three-quarter-desktop">
+          <!-- メインコンテンツ -->
+          {% block main_content %}
+          {% endblock %}
+        </div>
+        <div class="column is-one-quarter-desktop">
+          <!-- サイドバー -->
+          {%- import '../_module/common/sidebar.njk' as sidebar -%}
+          {{ sidebar.sidebar(pageData.category) }}
+        </div>
       </div>
     </div>
   </div>

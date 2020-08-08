@@ -1,15 +1,49 @@
-{% macro normal(newsData) -%}
-<div class="columns news-list">
-{%- for item in newsData -%}
-  <div class="column is-one-third content tablet-column">
-    <a href="{{ item.link }}">
-      <p class="image is-2by1">
-        <img src="{{ item.img }}" alt="{{ item.alt }}">
-        <p class="title is-4">{{ item.title }}</p>
-        <p class="subtitle is-6">{{ item.text }}</p>
-      </p>
-    </a>
+{%- set newsData = [
+  {
+    title: '8/11のニュース',
+    text: 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。',
+    img: 'https://bulma.io/images/placeholders/640x320.png',
+    alt: 'テキストが入ります。',
+    link: 'news/20200811.html'
+  },
+  {
+    title: '8/10のニュース',
+    text: 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。',
+    img: 'https://bulma.io/images/placeholders/640x320.png',
+    alt: 'テキストが入ります。',
+    link: 'news/20200810.html'
+  },
+  {
+    title: '8/9のニュース',
+    text: 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。',
+    img: 'https://bulma.io/images/placeholders/640x320.png',
+    alt: 'テキストが入ります。',
+    link: 'news/20200809.html'
+  },
+  {
+    title: '8/8のニュース',
+    text: 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。',
+    img: 'https://bulma.io/images/placeholders/640x320.png',
+    alt: 'テキストが入ります。',
+    link: 'news/20200808.html'
+  }
+] -%}
+
+{% macro recentlyNews(num) -%}
+<section class="section">
+  <h2>最近のニュース</h2>
+  <div class="columns news-list">
+  {%- for item in newsData.slice(0, num) -%}
+    <div class="column is-half content tablet-column">
+      <a href="/{{ siteData.rootPath}}{{ item.link }}">
+        <p class="image is-2by1">
+          <img src="{{ item.img }}" alt="{{ item.alt }}">
+          <p class="title is-4">{{ item.title }}</p>
+          <p class="subtitle is-6">{{ item.text }}</p>
+        </p>
+      </a>
+    </div>
+  {%- endfor -%}
   </div>
-{%- endfor -%}
-</div>
+</section>
 {%- endmacro %}

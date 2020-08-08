@@ -1,3 +1,3 @@
 export function pageTopInit() {
-  console.log('page-top-init');
+  // トップページに遷移後のスクリプトを記載
 }

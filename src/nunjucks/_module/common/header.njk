@@ -3,7 +3,7 @@
     <div class="container">
       <div class="navbar-brand">
         <!-- ロゴ画像 -->
-        <a class="navbar-item" href="/">
+        <a class="navbar-item" href="/{{ siteData.rootPath }}">
           <img src="/img/common/logo.png">
         </a>
         <!-- ハンバーガーメニュー（スマホ時のみ） -->
@@ -17,7 +17,7 @@
       <div class="navbar-menu" id="js-header__navbar-menu">
         <div class="navbar-end">
           {%- for navItem in siteData.navList -%}
-          <a class="navbar-item{{ ' is-active' if navItem.name == pageData.nav }}" href="{{ navItem.path }}" data-link-name="{{ navItem.name }}">{{ navItem.name }}</a>
+          <a class="navbar-item{{ ' is-active' if navItem.name == pageData.nav }}" href="/{{ siteData.rootPath }}{{ navItem.path }}" data-link-name="{{ navItem.name }}">{{ navItem.name }}</a>
           {%- endfor -%}
         </div>
       </div>

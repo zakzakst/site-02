@@ -32,7 +32,6 @@ export function pageTransition() {
     views: [{
       namespace: 'top',
       afterEnter() {
-        console.log('top-enter');
         pageTopInit();
       }
     }]
