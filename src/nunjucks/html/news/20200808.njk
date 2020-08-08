@@ -28,7 +28,7 @@
     <p>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
   </section>
   {%- import '_module/news-list.njk' as newsList -%}
-  {{ newsList.recentlyNews(2) }}
+  {{ newsList.recentlyNews(2, siteData.rootPath) }}
 </div>
 {% endblock %}
 

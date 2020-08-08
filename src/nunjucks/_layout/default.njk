@@ -35,7 +35,7 @@
         <div class="column is-one-quarter-desktop">
           <!-- サイドバー -->
           {%- import '../_module/common/sidebar.njk' as sidebar -%}
-          {{ sidebar.sidebar(pageData.category) }}
+          {{ sidebar.sidebar(pageData.category, siteData.rootPath) }}
         </div>
       </div>
     </div>
